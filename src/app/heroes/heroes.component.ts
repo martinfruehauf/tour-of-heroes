@@ -9,7 +9,7 @@ import { MessageService } from '../message.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  public selectedHero: Hero;
+  selectedHero: Hero;
 
   heroes: Hero[];
 
@@ -19,7 +19,7 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  public onSelect(hero: Hero): void {
+  onSelect(hero: Hero): void {
     this.selectedHero = hero;
     this.messageService.add(`HeroService: Selected hero id=${hero.id}`);
   }
