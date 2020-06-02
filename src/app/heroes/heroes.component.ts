@@ -22,7 +22,7 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
-  private add(name: string): void {
+  public add(name: string): void {
     name = name.trim();
     if (!name) { return; }
     this.heroService.addHero({ name } as Hero)
@@ -31,7 +31,7 @@ export class HeroesComponent implements OnInit {
       });
   }
 
-  private delete(hero: Hero): void {
+  public delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
   }
